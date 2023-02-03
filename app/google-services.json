@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "238028304314",
+    "project_id": "petsafe-aade2",
+    "storage_bucket": "petsafe-aade2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238028304314:android:7a7e3b24f00068459d3783",
+        "android_client_info": {
+          "package_name": "com.example.PetSafe2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238028304314-kml3dd8rt6lktselach2drrradhnadh4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.PetSafe2",
+            "certificate_hash": "37131c2ef9124e4cbc5e7a8b2b139978d9f41ad5"
+          }
+        },
+        {
+          "client_id": "238028304314-93r0fop57odu4f16hkq9gpan68ubfeh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj-XgHZWp8ADkgJ3tPuD9HIgCEuj1Sj6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238028304314-93r0fop57odu4f16hkq9gpan68ubfeh8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

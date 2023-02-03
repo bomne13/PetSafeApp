@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--default-->
+    <dimen name="margin6">12dp</dimen>
+    <dimen name="margin12">24dp</dimen>
+    <dimen name="margin24">48dp</dimen>
+
+    <dimen name="font_tiny_size">12dp</dimen>
+    <dimen name="font_small_size">18dp</dimen>
+    <dimen name="font_medium_size">24dp</dimen>
+    <dimen name="font_large_size">30dp</dimen>
+
+    <dimen name="button_font">24dp</dimen>
+    <dimen name="backButton_size">42dp</dimen>
+    <dimen name="searchButton_size">30dp</dimen>
+    <dimen name="bellButton_width">30dp</dimen>
+    <dimen name="bellButton_height">36dp</dimen>
+
+    <dimen name="edittext_padding">12dp</dimen>
+    <dimen name="edittext_font">18dp</dimen>
+
+    <dimen name="line_height">3dp</dimen>
+
+    <dimen name="top_navigation_height">78dp</dimen>
+
+    <!-- fragment guide-->
+    <dimen name="guide_image_width">480dp</dimen>
+    <dimen name="guide_image_height">480dp</dimen>
+
+    <!-- fragment login-->
+    <dimen name="login_sns_button_size">48dp</dimen>
+
+    <!-- fragment home -->
+    <dimen name="home_manual_height">72dp</dimen>
+    <dimen name="home_manual_del_button_size">42dp</dimen>
+    <dimen name="home_button_size">42dp</dimen>
+    <dimen name="home_text_button_height">72dp</dimen>
+
+    <!-- board default-->
+    <dimen name="board_image_height">300dp</dimen>
+
+    <!-- fragment board -->
+    <dimen name="board_top_button_width">24dp</dimen>
+    <dimen name="board_top_button_height">30dp</dimen>
+    <dimen name="board_floating_button_size">72dp</dimen>
+    <dimen name="board_floating_button_src_size">78dp</dimen>
+
+    <!-- fragment board write-->
+    <dimen name="boardWrite_image_button_size">120dp</dimen>
+    <dimen name="boardWrite_image_button_padding">6dp</dimen>
+
+    <!-- fragment board detail -->
+    <dimen name="boardDetail_top_menu_button_width">6dp</dimen>
+    <dimen name="boardDetail_top_menu_button_height">24dp</dimen>
+    <dimen name="boardDetail_profile_size">42dp</dimen>
+    <dimen name="boardDetail_reaction_button_width">90dp</dimen>
+    <dimen name="boardDetail_reaction_button_height">66dp</dimen>
+    <dimen name="boardDetail_bottom_reply_edittext_min_height">48dp</dimen>
+    <dimen name="boardDetail_bottom_reply_submit_button_size">48dp</dimen>
+
+    <!-- fragment mypage-->
+    <dimen name="mypage_setting_button_size">36dp</dimen>
+    <dimen name="mypage_text_button_height">72dp</dimen>
+    <dimen name="mypage_plus_button_size">42dp</dimen>
+
+    <!-- list comment -->
+    <dimen name="list_comment_profile_size">48dp</dimen>
+
+</resources>

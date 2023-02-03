@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/calendar"
+        android:enabled="true"
+        android:title="캘린더"
+        android:icon="@drawable/ic_calendar"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/exercise"
+        android:enabled="true"
+        android:title="운동"
+        android:icon="@drawable/ic_exercise"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:title="홈"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/board"
+        android:enabled="true"
+        android:title="커뮤니티"
+        android:icon="@drawable/ic_community"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/mypage"
+        android:enabled="true"
+        android:title="마이페이지"
+        android:icon="@drawable/ic_mypage"
+        app:showAsAction="always"/>
+
+
+</menu>

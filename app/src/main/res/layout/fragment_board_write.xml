@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.fragment.BoardWriteFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <LinearLayout
+        android:id="@+id/topLinear"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/top_navigation_height"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Top_guideLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Top_guideRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96" />
+
+            <TextView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="취소"
+                android:textSize="@dimen/font_medium_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/Top_guideLeft"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/communityBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/ic_more"
+                android:text="자유게시판"
+                android:textSize="@dimen/font_medium_size"
+                android:textColor="#7e7e7e"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/submitBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="등록"
+                android:textSize="@dimen/font_medium_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Top_guideRight"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/line_height"
+        android:background="#EEEEEE"
+        app:layout_constraintTop_toBottomOf="@+id/topLinear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <EditText
+        android:id="@+id/write_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin24"
+        android:background="@color/white"
+        android:hint="제목을 입력해 주세요"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="#999"
+        android:textSize="@dimen/font_medium_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toTopOf="@id/view1" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/margin6"
+        android:background="#EEEEEE"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toBottomOf="@+id/write_title" />
+
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/photoList"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/content_guideRight"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/content_guideLeft"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/view2"-->
+    <!--        tools:listitem="@layout/list_item_photo_add" />-->
+
+    <Button
+        android:id="@+id/photoAddBtn"
+        android:layout_width="@dimen/boardWrite_image_button_size"
+        android:layout_height="@dimen/boardWrite_image_button_size"
+        android:layout_marginTop="@dimen/margin12"
+        android:background="@drawable/border_round10"
+        android:drawableLeft="@drawable/ic_photo"
+        android:padding="@dimen/boardWrite_image_button_padding"
+        android:text="0/10"
+        android:textColor="#ACACAC"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:id="@+id/testIv"
+        android:layout_width="@dimen/boardWrite_image_button_size"
+        android:layout_height="@dimen/boardWrite_image_button_size"
+        android:layout_marginStart="@dimen/margin12"
+        android:layout_marginTop="@dimen/margin12"
+        app:layout_constraintStart_toEndOf="@+id/BtnAddPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:siBorderColor="#EEEEEE"
+        app:siBorderWidth="2dp"
+        app:siRadius="10dp"
+        app:siSquare="true" />
+
+    <EditText
+        android:id="@+id/write_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:hint="내용을 입력해 주세요"
+        android:textColor="@color/black"
+        android:textColorHint="#999"
+        android:textSize="@dimen/font_medium_size"
+        android:gravity="top"
+        android:layout_marginTop="@dimen/margin12"
+        app:layout_constraintBottom_toTopOf="@+id/guideBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toBottomOf="@id/testIv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

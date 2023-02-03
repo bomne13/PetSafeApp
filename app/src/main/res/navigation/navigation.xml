@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/guideFragment">
+
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.example.petsafe2.view.fragment.GuideFragment"
+        android:label="fragment_guide"
+        tools:layout="@layout/fragment_guide" >
+        <action
+            android:id="@+id/action_guide_to_login"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_guide_to_home"
+            app:destination="@+id/home"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.petsafe2.view.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@+id/home"/>
+        <argument
+            android:name="logoutCheck"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/calendar"
+        android:name="com.example.petsafe2.view.fragment.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <fragment
+        android:id="@+id/exercise"
+        android:name="com.example.petsafe2.view.fragment.ExerciseFragment"
+        android:label="fragment_exercise"
+        tools:layout="@layout/fragment_exercise"/>
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.petsafe2.view.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"/>
+
+
+    <fragment
+        android:id="@+id/board"
+        android:name="com.example.petsafe2.view.fragment.BoardFragment"
+        android:label="fragment_board"
+        tools:layout="@layout/fragment_board">
+        <action
+            android:id="@+id/action_board_to_detail"
+            app:destination="@id/boardDetailFragment" />
+        <action
+            android:id="@+id/action_board_to_write"
+            app:destination="@id/boardWriteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/boardDetailFragment"
+        android:name="com.example.petsafe2.view.fragment.BoardDetailFragment"
+        android:label="fragment_board_detail"
+        tools:layout="@layout/fragment_board_detail">
+        <argument
+            android:name="board"
+            app:argType="com.example.petsafe2.model.Board[]" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/boardWriteFragment"
+        android:name="com.example.petsafe2.view.fragment.BoardWriteFragment"
+        android:label="fragment_board_write"
+        tools:layout="@layout/fragment_board_write" >
+        <argument
+            android:name="getBoard"
+            app:argType="com.example.petsafe2.model.Board[]" />
+        <action
+            android:id="@+id/action_write_to_detail"
+            app:destination="@id/boardDetailFragment"
+            app:popUpTo="@id/board"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/mypage"
+        android:name="com.example.petsafe2.view.fragment.MypageFragment"
+        android:label="fragment_mypage"
+        tools:layout="@layout/fragment_mypage">
+        <action
+            android:id="@+id/action_mypage_to_setting"
+            app:destination="@id/settingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.petsafe2.view.fragment.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_setting_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/guideFragment"/>
+    </fragment>
+
+</navigation>

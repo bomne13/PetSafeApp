@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomCheckbox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_selector</item>
+    </style>
+
+    <style name="Picker" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorPrimary">#7e7e7e</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="colorControlNormal">#00000000</item>
+    </style>
+
+    <style name="CustomCalendar" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:weekNumberColor">@android:color/holo_red_light</item>
+        <item name="android:weekSeparatorLineColor">@color/black</item>
+    </style>
+
+
+</resources>

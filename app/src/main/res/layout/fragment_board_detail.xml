@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.fragment.BoardDetailFragment">
+
+    <data>
+        <variable
+            name="board"
+            type="com.example.petsafe2.model.Board" />
+        <variable
+            name="user"
+            type="com.example.petsafe2.model.User" />
+        <variable
+            name="boardImgResId"
+            type="com.example.petsafe2.view.databinding.BindingConversions" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <!--상단 navigation-->
+        <LinearLayout
+            android:id="@+id/topLinear"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/top_navigation_height"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/Top_guideLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/Top_guideRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96" />
+
+                <Button
+                    android:id="@+id/backBtn"
+                    android:layout_width="@dimen/backButton_size"
+                    android:layout_height="@dimen/backButton_size"
+                    android:background="@drawable/ic_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/Top_guideLeft"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="자유 게시판"
+                    android:textSize="@dimen/font_medium_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/moreMenuBtn"
+                    android:layout_width="@dimen/boardDetail_top_menu_button_width"
+                    android:layout_height="@dimen/boardDetail_top_menu_button_height"
+                    android:background="@drawable/ic_etc"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/Top_guideRight"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/line_height"
+            android:background="#EEEEEE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLinear" />
+
+
+        <!--게시글 내용 + 게시글 댓글-->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomLinear"
+            app:layout_constraintEnd_toEndOf="@id/guideRight"
+            app:layout_constraintStart_toStartOf="@+id/guideLeft"
+            app:layout_constraintTop_toBottomOf="@+id/view1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin6"
+                    android:text="제목"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_medium_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/wriiter_img"
+                    android:layout_width="@dimen/boardDetail_profile_size"
+                    android:layout_height="@dimen/boardDetail_profile_size"
+                    android:layout_marginTop="@dimen/margin6"
+                    android:background="@drawable/ic_circle"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/writer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin6"
+                    android:layout_marginTop="@dimen/margin6"
+                    android:text="작성자"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_small_size"
+                    app:layout_constraintStart_toEndOf="@+id/wriiter_img"
+                    app:layout_constraintTop_toBottomOf="@+id/title" />
+
+                <TextView
+                    android:id="@+id/write_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin6"
+                    android:text="2023.01.10"
+                    android:textColor="#999"
+                    android:textSize="@dimen/font_tiny_size"
+                    app:layout_constraintStart_toEndOf="@+id/wriiter_img"
+                    app:layout_constraintTop_toBottomOf="@+id/writer" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:layout_marginTop="@dimen/margin12"
+                    android:background="#EEEEEE"
+                    app:layout_constraintTop_toBottomOf="@id/write_date" />
+
+                <ImageView
+                    android:id="@+id/imgView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/board_image_height"
+                    android:layout_marginTop="@dimen/margin24"
+                    android:background="@drawable/border_round10"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_medium_size"
+                    app:layout_constraintTop_toBottomOf="@+id/imgView" />
+
+
+                <Button
+                    android:id="@+id/heartBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="@dimen/boardDetail_reaction_button_width"
+                    android:layout_height="@dimen/boardDetail_reaction_button_height"
+                    android:layout_marginStart="-10dp"
+                    android:drawableStart="@drawable/ic_heart"
+                    android:text=""
+                    android:textColor="#7e7e7e"
+                    android:textSize="@dimen/font_small_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/content" />
+
+                <Button
+                    android:id="@+id/replyBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="@dimen/boardDetail_reaction_button_width"
+                    android:layout_height="@dimen/boardDetail_reaction_button_height"
+                    android:drawableStart="@drawable/ic_comment"
+                    android:text=""
+                    android:textColor="#7e7e7e"
+                    android:textSize="@dimen/font_small_size"
+                    app:layout_constraintStart_toEndOf="@+id/heartBtn"
+                    app:layout_constraintTop_toBottomOf="@+id/content" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="#EEEEEE"
+                    app:layout_constraintTop_toBottomOf="@+id/replyBtn" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/reply_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/view3"
+                    tools:listitem="@layout/list_item_comment" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+        <!--하단 댓글 입력창-->
+        <LinearLayout
+            android:id="@+id/bottomLinear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="#EEEEEE" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin6"
+                android:layout_marginBottom="@dimen/margin6">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/bottom_guideLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/bottom_guideRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96" />
+
+                <EditText
+                    android:id="@+id/replyWrite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin6"
+                    android:background="@drawable/border_round10"
+                    android:minHeight="@dimen/boardDetail_bottom_reply_edittext_min_height"
+                    android:maxLines="3"
+                    android:padding="@dimen/margin6"
+                    android:textColor="#7e7e7e"
+                    android:textSize="@dimen/font_small_size"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/bottom_guideLeft"
+                    app:layout_constraintEnd_toStartOf="@+id/replySubmitBtn"/>
+
+                <ImageButton
+                    android:id="@+id/replySubmitBtn"
+                    android:layout_width="@dimen/boardDetail_bottom_reply_submit_button_size"
+                    android:layout_height="@dimen/boardDetail_bottom_reply_submit_button_size"
+                    android:background="@drawable/ic_chatsend"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/bottom_guideRight"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

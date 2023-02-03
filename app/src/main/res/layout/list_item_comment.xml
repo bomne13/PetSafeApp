@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="comment"
+            type="com.example.petsafe2.model.Comment" />
+        <variable
+            name="user"
+            type="com.example.petsafe2.model.User" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin12">
+
+            <TextView
+                android:id="@+id/rno"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{comment.rno}"/>
+
+            <TextView
+                android:id="@+id/replyId"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{comment.userId}"/>
+
+            <ImageView
+                android:id="@+id/replyImg"
+                android:layout_width="@dimen/list_comment_profile_size"
+                android:layout_height="@dimen/login_sns_button_size"
+                app:imageUrl="@{user.profileImage}"
+                app:error="@{@drawable/ic_profile}"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:id="@+id/replyWriter"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_marginStart="@dimen/margin6"
+                        android:gravity="left"
+                        android:text="@{user.nickname}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_small_size" />
+
+                    <TextView
+                        android:id="@+id/replyEtcBtn"
+                        android:layout_weight="0"
+                        android:layout_width="3dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="@dimen/margin6"
+                        android:layout_marginEnd="@dimen/margin6"
+                        android:background="@drawable/ic_etc" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/replyDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin6"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="center"
+                    android:text="@{comment.regDate}"
+                    android:textColor="#999"
+                    android:textSize="@dimen/font_tiny_size" />
+
+
+                <TextView
+                    android:id="@+id/replyContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin6"
+                    android:gravity="left"
+                    android:text="@{comment.content}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_small_size" />
+
+                <TextView
+                    android:id="@+id/heartBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="@dimen/font_small_size"
+                    android:layout_gravity="right"
+                    android:text="@{comment.likeCnt}"
+                    android:textColor="#7e7e7e"
+                    android:textSize="@dimen/font_small_size"
+                    app:drawableLeftCompat="@drawable/ic_heart" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
